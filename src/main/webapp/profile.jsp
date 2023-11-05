@@ -19,6 +19,7 @@
     <div class="card-body">
       <h2 class="card-title">Profile</h2>
       <table class="table" method="post" action="profile">
+      
         <!-- head -->
         <thead>
           <tr>

@@ -63,7 +63,7 @@
         <option value="BSc">BSc</option>
         <option value="BA LLB">BA LLB</option>
         <option value="LLM">LLM</option>
-        <option value="BBA">BBA</option>
+        <option value="MCA">MCA</option>
     </select>
 </div>
 
@@ -104,14 +104,42 @@
 	    var total = document.getElementById("semester");
 	    total.innerHTML = "";
 	    if (department == "B.Tech") {
-	        for (var i = 1; i <= 8; i++) {
+	        for (var i = 1; i <= 7; i++) {
 	            var option = document.createElement("option");
 	            option.value = i; 
 	            option.text = i;
 	            total.add(option);
 	        }
 	    } else if (department == "BCA") {
-	        for (var i = 1; i <= 6; i++) {
+	        for (var i = 1; i <= 5; i++) {
+	            var option = document.createElement("option");
+	            option.value = i;  
+	            option.text = i;
+	            total.add(option);
+	        }
+	    }else if (department == "BSc") {
+	        for (var i = 1; i <= 5; i++) {
+	            var option = document.createElement("option");
+	            option.value = i;  
+	            option.text = i;
+	            total.add(option);
+	        }
+	    }else if (department == "BA LLB") {
+	        for (var i = 1; i <= 9; i++) {
+	            var option = document.createElement("option");
+	            option.value = i;  
+	            option.text = i;
+	            total.add(option);
+	        }
+	    }else if (department == "LLM") {
+	        for (var i = 1; i <= 1; i++) {
+	            var option = document.createElement("option");
+	            option.value = i;  
+	            option.text = i;
+	            total.add(option);
+	        }
+	    }else if (department == "MCA") {
+	        for (var i = 1; i <= 3; i++) {
 	            var option = document.createElement("option");
 	            option.value = i;  
 	            option.text = i;
