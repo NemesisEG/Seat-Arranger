@@ -44,7 +44,7 @@ int sem = (int) session.getAttribute("semester");
                         {"Network Essentials","Cloud Computing Foundations","Object Oriented Programming using Java ","Operating System Concepts","Design and Analysis of Algorithms","Economics and Business Perspective of IT Projects","Ethics for Professionals, Patents, Copyrights and IPR"},
                         {"Mobile Programming","Solving Problems with Design Thinking and Innovation","Competitive Programming Skills"}};
       
-      String BTECH[][]={{"Computational Thinking and Programming","Engineering Calculus","Electromagnetics","Environment and Sustainability","Foundations of Innovation and Entrepreneurship","New Age Life Skills"},
+      String BTech[][]={{"Computational Thinking and Programming","Engineering Calculus","Electromagnetics","Environment and Sustainability","Foundations of Innovation and Entrepreneurship","New Age Life Skills"},
     		  {"Object Oriented Programming using Java","Digital Design","Discrete Mathematical Structures","Linear Algebra and Ordinary Differential Equations","Mechanics","Introduction to Electrical and Electronics Engineering"},
     		  {"Information Management Systems","Data Structures using C++","Microprocessors and Computer Architecture","Probability and Statistics","Software Engineering"},
     		  {},{},{},{}};
@@ -63,14 +63,14 @@ int sem = (int) session.getAttribute("semester");
       <%
             }
           }
-        }else if("BTECH".equals(course)){
+        }else if("BTech".equals(course)){
             for (int j = sem-1; j==sem-1 ; j++) {
-                for (int i = 0; i < BTECH[j].length; i++) {
+                for (int i = 0; i < BTech[j].length; i++) {
           %>
           <!-- row -->
           <tr>
             <th><%= i + 1 %></th>
-            <td><%= BTECH[j][i] %></td>
+            <td><%= BTech[j][i] %></td>
             <td>coming soon</td>
           </tr>
           <%

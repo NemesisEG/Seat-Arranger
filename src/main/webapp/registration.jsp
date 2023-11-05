@@ -103,7 +103,7 @@
 	    var department = document.getElementById("department").value;
 	    var total = document.getElementById("semester");
 	    total.innerHTML = "";
-	    if (department == "B.Tech") {
+	    if (department == "BTech") {
 	        for (var i = 1; i <= 7; i++) {
 	            var option = document.createElement("option");
 	            option.value = i; 
