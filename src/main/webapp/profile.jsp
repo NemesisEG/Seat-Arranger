@@ -18,7 +18,13 @@
   <div class="card-normal w-96 bg-base-100 shadow-xl">
     <div class="card-body">
       <h2 class="card-title">Profile</h2>
-      <table class="table" method="post" action="profile">
+      
+      <% 
+String userRole = (String) session.getAttribute("role");
+
+if ("student".equals(userRole)) {
+%>
+   <table class="table" method="post" action="profile">
       
         <!-- head -->
         <thead>
@@ -46,7 +52,7 @@
             <td><%=session.getAttribute("mobile") %></td>
           </tr>
           <tr class="hover">
-            <td>Department</td>
+            <td>Course</td>
             <td><%=session.getAttribute("department") %></td>
           </tr>
           <tr class="hover">
@@ -59,6 +65,87 @@
           </tr>
         </tbody>
       </table>
+<%
+} else if ("admin".equals(userRole)) {
+%>
+ <table class="table" method="post" action="profile">
+      
+        <!-- head -->
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- row 1 -->
+          <tr class="hover">
+            <td>Name</td>
+            <td><%=session.getAttribute("name") %></td>
+          </tr>
+          <!-- row 2 -->
+          <tr class="hover">
+            <td>E-mail</td>
+            <td><%=session.getAttribute("email") %></td>
+          </tr>
+          <!-- row 3 -->
+          <tr class="hover">
+            <td>Mobile</td>
+            <td><%=session.getAttribute("mobile") %></td>
+          </tr>
+          <tr class="hover">
+            <td>Role</td>
+            <td><%=session.getAttribute("role") %></td>
+          </tr>
+        </tbody>
+      </table>
+<%
+} else if ("superuser".equals(userRole)) {
+%>   <table class="table" method="post" action="profile">
+      
+        <!-- head -->
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- row 1 -->
+          <tr class="hover">
+            <td>Name</td>
+            <td><%=session.getAttribute("name") %></td>
+          </tr>
+          <!-- row 2 -->
+          <tr class="hover">
+            <td>E-mail</td>
+            <td><%=session.getAttribute("email") %></td>
+          </tr>
+          <!-- row 3 -->
+          <tr class="hover">
+            <td>Mobile</td>
+            <td><%=session.getAttribute("mobile") %></td>
+          </tr>
+          <tr class="hover">
+            <td>Role</td>
+            <td><%=session.getAttribute("role") %></td>
+          </tr>
+        </tbody>
+      </table>
+<%
+} else {
+%>
+    <!-- Default content for unknown roles or unauthenticated users -->
+    <h1>Welcome, Guest!</h1>
+    <!-- Display default content or handle unauthorized access here -->
+<%
+}
+%>
+      
       <div class="card-actions justify-end">
         <button class="btn btn-primary">Reset Password</button>
       </div>

@@ -58,7 +58,7 @@
     <label for="department"><i class="zmdi zmdi-chevron-down"></i></label>
     <select name="department" id="department" required="required" onchange="changeSemesters()">
         <option value="" disabled selected>Select Department</option>
-        <option value="B.Tech">B.Tech</option>
+        <option value="BTech">B.Tech</option>
         <option value="BCA">BCA</option>
         <option value="BSc">BSc</option>
         <option value="BA LLB">BA LLB</option>
