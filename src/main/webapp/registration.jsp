@@ -58,12 +58,15 @@
     <label for="department"><i class="zmdi zmdi-chevron-down"></i></label>
     <select name="department" id="department" required="required" onchange="changeSemesters()">
         <option value="" disabled selected>Select Department</option>
-        <option value="BTech">B.Tech</option>
+        <option value="Btech">Btech</option>
         <option value="BCA">BCA</option>
-        <option value="BSc">BSc</option>
-        <option value="BA LLB">BA LLB</option>
-        <option value="LLM">LLM</option>
+        <option value="BSC">BSC</option>
+        <option value="BBALLB">BBALLB</option>
+        <option value="BAJMC">BAJMC</option>
         <option value="MCA">MCA</option>
+        <option value="BBA">BBA</option>
+        <option value="MTech">MTech</option>
+        <option value="MBA">MBA</option>
     </select>
 </div>
 
@@ -103,7 +106,7 @@
 	    var department = document.getElementById("department").value;
 	    var total = document.getElementById("semester");
 	    total.innerHTML = "";
-	    if (department == "BTech") {
+	    if (department == "Btech") {
 	        for (var i = 1; i <= 7; i++) {
 	            var option = document.createElement("option");
 	            option.value = i; 
@@ -117,22 +120,22 @@
 	            option.text = i;
 	            total.add(option);
 	        }
-	    }else if (department == "BSc") {
+	    }else if (department == "BSC") {
 	        for (var i = 1; i <= 5; i++) {
 	            var option = document.createElement("option");
 	            option.value = i;  
 	            option.text = i;
 	            total.add(option);
 	        }
-	    }else if (department == "BA LLB") {
+	    }else if (department == "BBALLB") {
 	        for (var i = 1; i <= 9; i++) {
 	            var option = document.createElement("option");
 	            option.value = i;  
 	            option.text = i;
 	            total.add(option);
 	        }
-	    }else if (department == "LLM") {
-	        for (var i = 1; i <= 1; i++) {
+	    }else if (department == "BAJMC") {
+	        for (var i = 1; i <= 5; i++) {
 	            var option = document.createElement("option");
 	            option.value = i;  
 	            option.text = i;
@@ -145,7 +148,28 @@
 	            option.text = i;
 	            total.add(option);
 	        }
-	    } else {
+	    }else if (department == "MTech") {
+	        for (var i = 1; i <= 3; i++) {
+	            var option = document.createElement("option");
+	            option.value = i;  
+	            option.text = i;
+	            total.add(option);
+	        }
+	    }else if (department == "MBA") {
+	        for (var i = 1; i <= 4; i++) {
+	            var option = document.createElement("option");
+	            option.value = i;  
+	            option.text = i;
+	            total.add(option);
+	        }
+	    }else if (department == "BBA") {
+	        for (var i = 1; i <= 6; i++) {
+	            var option = document.createElement("option");
+	            option.value = i;  
+	            option.text = i;
+	            total.add(option);
+	        }
+	    }else {
 	        total.innerHTML = "Select Department First";
 	    }
 	}
