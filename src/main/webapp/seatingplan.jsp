@@ -48,7 +48,21 @@ int sem = (int) session.getAttribute("semester");
     		  {"Object Oriented Programming using Java","Digital Design","Discrete Mathematical Structures","Linear Algebra and Ordinary Differential Equations","Mechanics","Introduction to Electrical and Electronics Engineering"},
     		  {"Information Management Systems","Data Structures using C++","Microprocessors and Computer Architecture","Probability and Statistics","Software Engineering"},
     		  {},{},{},{}};
-
+      
+      String classId[] = {"c1","c2","c3","c4","c5"};
+      String seats[][][] = new String[classId.length][5][5];
+      
+      for (int j = 0; j<5 ; j++) {
+          for (int i = 0; i < 5; i++) {
+              for (int k = 0; k < 5; k++) {
+        	  seats[j][i][k]=classId[j]+i+k;
+       	  	}
+          }
+      }
+    
+      
+      
+      
         if ("student".equals(userRole)) {
         	if("BCA".equals(course)){
           for (int j = sem-1; j==sem-1 ; j++) {
