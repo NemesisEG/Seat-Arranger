@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet {
 	 }
 	 try {
 		 Class.forName("com.mysql.jdbc.Driver");
-		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/company?useSSL=false","root","root");
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/company?useSSL=false","root","Piano004");
 		PreparedStatement pst= con.prepareStatement("select * from users where uemail = ? and upwd = ?");
 		pst.setString(1, uemail);
 		pst.setString(2, upwd);
