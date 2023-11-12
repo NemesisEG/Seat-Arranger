@@ -36,8 +36,7 @@ public class ForgotPassword extends HttpServlet {
 			Random rand = new Random();
 			otpvalue = rand.nextInt(1255650);
 
-			String to = email;// change accordingly
-			// Get the session object
+			String to = email;
 			Properties props = new Properties();
 			props.put("mail.smtp.host", "smtp.gmail.com");
 			props.put("mail.smtp.socketFactory.port", "465");
@@ -66,11 +65,9 @@ public class ForgotPassword extends HttpServlet {
 			}
 			dispatcher = request.getRequestDispatcher("EnterOtp.jsp");
 			request.setAttribute("message","OTP is sent to your email id");
-			//request.setAttribute("connection", con);
 			mySession.setAttribute("otp",otpvalue); 
 			mySession.setAttribute("email",email); 
 			dispatcher.forward(request, response);
-			//request.setAttribute("status", "success");
 		}
 		
 	}

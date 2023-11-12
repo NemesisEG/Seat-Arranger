@@ -147,7 +147,7 @@ if ("student".equals(userRole)) {
 %>
       
       <div class="card-actions justify-end">
-<button class="btn btn-primary" onclick="window.location.href='changepassword.jsp'">Reset Password</button>
+<button class="btn btn-primary" onclick="window.location.href='changePassword.jsp'">Reset Password</button>
       </div>
     </div>
   </div>
