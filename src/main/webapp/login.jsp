@@ -44,6 +44,10 @@
 									type="password" name="password" id="password"
 									placeholder="Password" required="required"/>
 							</div>
+							
+							<div class="form-group">
+								<a href="forgotPassword.jsp">Forgot Password</a>
+							</div>
 							<div class="form-group form-button">
 								<input type="submit" name="signin" id="signin"
 									class="form-submit" value="Log in" />
