@@ -22,6 +22,8 @@
 String userRole = (String) session.getAttribute("role");
 String course = (String) session.getAttribute("department");
 int sem = (int) session.getAttribute("semester");
+int seatCounter = 1;
+int noOfClassrooms = 10;
 
 
 %>
@@ -33,7 +35,7 @@ int sem = (int) session.getAttribute("semester");
       <tr>
         <th></th>
         <th>Name</th>
-        <th>Venue</th>
+        <th>Seat</th>
         
       </tr>
     </thead>
@@ -114,18 +116,31 @@ int sem = (int) session.getAttribute("semester");
       		    {"Operating System Essentials", "Software Development Framework", "Information and Database Management Systems", "Computer Network-Layers and Protocols", "Product Design Technology", "Professionals Ethics, Patent, Copyrights and IPR"},
       		    {"Capstone Project"}
       		};
-
-
+      	
+      	//TESTING DATA FOR THE PROJECT 
+      	
+      	
+		String Seats[] = {"SeatNo.1","SeatNo.2","SeatNo.3","SeatNo.4","SeatNo.5","SeatNo.6","SeatNo.7","SeatNo.8","SeatNo.9"};
+		
+		/* String ClassroomID []= {"Classroom1","Classroom2","Classroom3","Classroom4","Classroom5","Classroom6","Classroom7","Classroom8","Classroom9","Classroom10"};
+		
+		int ClassroomSize [] = {30,50,40,60,70,25,15,45,35,20};
+		
+		String RandomNames [] = {"Ethan","Samrat","Nishant","Saumya","Maaz","Arshi","Ansh","Manvi","Kanika","Lakshay"}; */
+		
+		// THE ABOVE CODE WILL BE REMOVED WHEN CONNECTED TO BACKEND
+		
         if ("student".equals(userRole)) {
         	if("BCA".equals(course)){
           for (int j = sem-1; j==sem-1 ; j++) {
-            for (int i = 0; i < BCA[j].length; i++) {
+            for (int i = 0; i < BCA[j].length && i < Seats.length; i++) {
+            	String seatNumber = Seats[i];
       %>
       <!-- row -->
       <tr>
         <th><%= i + 1 %></th>
         <td><%= BCA[j][i] %></td>
-        <td>coming soon</td>
+        <td><%= seatNumber %></td>
       </tr>
       <%
             }
@@ -241,6 +256,85 @@ int sem = (int) session.getAttribute("semester");
         	    <!-- Content for admins -->
         	    <h1>Welcome, Admin!</h1>
         	    <h2><%=session.getAttribute("email") %></h2>
+        	    
+        	    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classroom Seating</title>
+    <style>
+        .scrollable-container {
+            max-height: 600px; /* Adjust the max height as needed */
+            overflow-y: auto;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .classroom-section {
+            display: inline-block;
+            margin-right: 20px;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Classroom Seating Plan</h2>
+
+    <div class="scrollable-container">
+        <% 
+            String ClassroomID[] = {"Classroom1", "Classroom2", "Classroom3", "Classroom4", "Classroom5", "Classroom6", "Classroom7", "Classroom8", "Classroom9", "Classroom10"};
+            int ClassroomSize[] = {30, 50, 40, 40, 40, 25, 15, 45, 35, 20};
+            String RandomNames[] = {"Ethan", "Samrat", "Nishant", "Saumya", "Maaz", "Arshi", "Ansh", "Manvi", "Kanika", "Lakshay", "Ethan", "Samrat", "Nishant", "Saumya", "Maaz", "Arshi", "Ansh", "Manvi", "Kanika", "Lakshay", "Ethan", "Samrat", "Nishant", "Saumya", "Maaz", "Arshi", "Ansh", "Manvi", "Kanika", "Lakshay", "Ethan", "Samrat", "Nishant", "Saumya", "Maaz", "Arshi", "Ansh", "Manvi", "Kanika", "Lakshay"};
+
+            int studentIndex = 0;
+
+            for (int i = 0; i < ClassroomID.length; i++) {
+        %>
+        <div class="classroom-section">
+            <h3><%= ClassroomID[i] %></h3>
+            <table>
+                <tr>
+                    <th>Seat Number</th>
+                    <th>Name</th>
+                </tr>
+                <tr>
+            <% 
+                    for (int j = 0; j < ClassroomSize[i]; j++) {
+                        int currentIndex = studentIndex % RandomNames.length;
+            %>
+                    <td><%= j + 1 %></td>
+                    <td><%= RandomNames[currentIndex] %></td>
+            <% 
+                        studentIndex++;
+                    }
+            %>
+                </tr>
+            </table>
+        </div>
+        <%
+            }
+        %>
+    </div>
+
+</body>
+</html>
+        	    
+        	    
         	    <!-- Display admin-specific data here -->
         	<%
         	} else if ("superuser".equals(userRole)) {
