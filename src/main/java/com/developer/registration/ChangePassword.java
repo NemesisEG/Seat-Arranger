@@ -33,7 +33,7 @@ public class ChangePassword extends HttpServlet {
 
 			try {
 			    Class.forName("com.mysql.jdbc.Driver");
-			    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/company?useSSL=false", "root", "Piano004");
+			    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/company?useSSL=false", "root", "root");
 
 			    // Fetch the old password from the database
 			    PreparedStatement fetchOldPasswordStmt = con.prepareStatement("SELECT upwd FROM users WHERE uemail = ?");

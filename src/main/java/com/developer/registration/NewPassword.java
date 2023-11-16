@@ -31,8 +31,7 @@ public class NewPassword extends HttpServlet {
 
 			try {
 				Class.forName("com.mysql.jdbc.Driver");
-				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/company?useSSL=false", "root",
-						"Piano004");
+				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/company?useSSL=false", "root","root");
 				PreparedStatement pst = con.prepareStatement("update users set upwd = ? where uemail = ? ");
 				pst.setString(1, newPassword);
 				pst.setString(2, (String) session.getAttribute("email"));
