@@ -32,32 +32,34 @@ body {
 	box-shadow: 0 0 0 0px #28a745
 }
 </style>
-<link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css"
+	rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body oncontextmenu='return false' class='snippet-body'>
-	
-				
-				<div class="flex justify-center items-center h-screen">
-  <div class="card-normal w-96 bg-base-100 shadow-xl">
-    <div class="card-body">
-				<form  action="forgotPassword" method="POST">
-					<div >
+
+
+	<div class="flex justify-center items-center h-screen">
+		<div class="card-normal w-96 bg-base-100 shadow-xl">
+			<div class="card-body">
+				<form action="forgotPassword" method="POST">
+					<div>
 						<div class="form-group">
 							<label for="email-for-pass">Forgot Password</label> <input
-								class="form-control" type="text" name="email" id="email-for-pass" placeholder="enter your email" required=""><small
-								class="form-text text-muted">Enter the registered email address . Then we'll
-								email a OTP to this address.</small>
+								class="form-control" type="text" name="email"
+								id="email-for-pass" placeholder="enter your email" required=""><small
+								class="form-text text-muted">Enter the registered email
+								address . Then we'll email a OTP to this address.</small>
 						</div>
-						<div >
-						<button class="btn-md btn-active btn-primary" type="submit">Get New
-							Password</button>
-							
-						<button class="btn-md btn-active btn-error" type="submit">Back to
-							Login</button>
+						<div>
+							<button class="btn-md btn-active btn-primary" type="submit">Get
+								New Password</button>
+
+							<button class="btn-md btn-active btn-error" type="submit">Back
+								to Login</button>
+						</div>
 					</div>
-					</div>
-					
+
 				</form>
 			</div>
 		</div>

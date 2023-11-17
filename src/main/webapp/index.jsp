@@ -1,5 +1,6 @@
+
 <%
-if(session.getAttribute("name")==null){
+if (session.getAttribute("name") == null) {
 	response.sendRedirect("login.jsp");
 }
 %>
@@ -26,36 +27,41 @@ if(session.getAttribute("name")==null){
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="css/index-styles.css" rel="stylesheet" />
 
-<link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css"
+	rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body id="page-top">
 	<!-- Navigation-->
 
-	
-	
-		
+
+
+
 	<div class="navbar bg-base-100">
-  <div class="flex-1">
-    <a class="btn btn-ghost normal-case text-xl">Seat Arrangement</a>
-  </div>
-  <div class="flex-none">
-    <ul class="menu menu-horizontal px-1">
-     <li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="profile.jsp">Profile</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="seatingplan.jsp">Seating Plan</a></li>
-						<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href=""><%=session.getAttribute("name") %></a></li>
-					<li> <button class="btn btn-outline btn-error"><a href="logout">Logout</a></button>
-					</li>
-					
-      
-    </ul>
-  </div>
-</div>
+		<div class="flex-1">
+			<a class="btn btn-ghost normal-case text-xl">Seat Arrangement</a>
+		</div>
+		<div class="flex-none">
+			<ul class="menu menu-horizontal px-1">
+				<li class="nav-item mx-0 mx-lg-1"><a
+					class="nav-link py-3 px-0 px-lg-3 rounded" href="profile.jsp">Profile</a></li>
+				<li class="nav-item mx-0 mx-lg-1"><a
+					class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
+				<li class="nav-item mx-0 mx-lg-1"><a
+					class="nav-link py-3 px-0 px-lg-3 rounded" href="seatingplan.jsp">Seating
+						Plan</a></li>
+				<li class="nav-item mx-0 mx-lg-1"><a
+					class="nav-link py-3 px-0 px-lg-3 rounded" href=""><%=session.getAttribute("name")%></a></li>
+				<li>
+					<button class="btn btn-outline btn-error">
+						<a href="logout">Logout</a>
+					</button>
+				</li>
+
+
+			</ul>
+		</div>
+	</div>
 	<!-- Masthead-->
 	<header class="masthead bg-primary text-white text-center">
 		<div class="container d-flex align-items-center flex-column">
@@ -71,11 +77,12 @@ if(session.getAttribute("name")==null){
 				<div class="divider-custom-line"></div>
 			</div>
 			<!-- Masthead Subheading-->
-			<p class="masthead-subheading font-weight-light mb-0">One Stop Solution for Seat Arrangement</p>
+			<p class="masthead-subheading font-weight-light mb-0">One Stop
+				Solution for Seat Arrangement</p>
 		</div>
 	</header>
 	<!-- Portfolio Section-->
-	 
+
 	<!-- About Section-->
 	<section class="page-section bg-primary text-white mb-0" id="about">
 		<div class="container">
@@ -105,7 +112,7 @@ if(session.getAttribute("name")==null){
 				</div>
 			</div>
 			<!-- About Section Button-->
-			
+
 		</div>
 	</section>
 	<!-- Contact Section-->
@@ -123,18 +130,18 @@ if(session.getAttribute("name")==null){
 				</div>
 				<div class="divider-custom-line"></div>
 			</div>
-			
+
 		</div>
 	</section>
 	<!-- Footer-->
 	<footer class="footer footer-center p-4 bg-base-300 text-base-content">
 		<!-- Copyright Section-->
-  <aside>
-    <p>Copyright © 2023 - All right reserved by nishant</p>
-  </aside>
-</footer>
+		<aside>
+			<p>Copyright © 2023 - All right reserved by nishant</p>
+		</aside>
+	</footer>
 
-	
+
 	<!-- Bootstrap core JS-->
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
