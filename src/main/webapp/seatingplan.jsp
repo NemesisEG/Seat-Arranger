@@ -327,10 +327,7 @@
 				<table class="table ">
 					<!-- head -->
 					<thead>
-						<tr>
-							<th>Name</th>
-							<th>Seat</th>
-						</tr>
+						
 					</thead>
 					<tbody>
 						<%
