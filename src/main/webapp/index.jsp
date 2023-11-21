@@ -100,15 +100,10 @@ if (session.getAttribute("name") == null) {
 			<!-- About Section Content-->
 			<div class="row">
 				<div class="col-lg-4 ms-auto">
-					<p class="lead">Freelancer is a free bootstrap theme created by
-						Start Bootstrap. The download includes the complete source files
-						including HTML, CSS, and JavaScript as well as optional SASS
-						stylesheets for easy customization.</p>
+					<p class="lead">The primary aim of this project is to create a user-friendly and efficient Exam Seating Arrangement System. The system enables the seamless management of student details, allocation of seats, and generation of the final seating plan</p>
 				</div>
 				<div class="col-lg-4 me-auto">
-					<p class="lead">You can create your own custom avatar for the
-						masthead, change the icon in the dividers, and add your email
-						address to the contact form to make it fully functional!</p>
+					<p class="lead">Now seating arrangement done easy</p>
 				</div>
 			</div>
 			<!-- About Section Button-->
@@ -137,7 +132,7 @@ if (session.getAttribute("name") == null) {
 	<footer class="footer footer-center p-4 bg-base-300 text-base-content">
 		<!-- Copyright Section-->
 		<aside>
-			<p>Copyright © 2023 - All right reserved by nishant</p>
+			<p>Copyright © 2023 - All right reserved by NES</p>
 		</aside>
 	</footer>
 

@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html data-theme="pastel">
 <head>
@@ -12,7 +13,7 @@
 <body>
 	<div>
 		<div class="navbar bg-base-300">
-			<a class="btn btn-ghost normal-case text-xl" href="index.jsp">Seat
+			<a class="btn btn-ghost normal-case text-xl" href="stdlist.jsp">Seat
 				Arranger</a>
 		</div>
 	</div>
@@ -25,7 +26,6 @@
 	<%
 	String userRole = (String) session.getAttribute("role");
 	String course = (String) session.getAttribute("department");
-	String userName = (String) session.getAttribute("name");
 	int sem = (int) session.getAttribute("semester");
 	int seatCounter = 1;
 	int noOfClassrooms = 10;
@@ -150,31 +150,20 @@
 			"Product Design Technology", "Professionals Ethics, Patent, Copyrights and IPR" },
 			{ "Capstone Project" } };
 
-	
+	//TESTING DATA FOR THE PROJECT 
 
 	String Seats[] = { "SeatNo.1", "SeatNo.2", "SeatNo.3", "SeatNo.4", "SeatNo.5", "SeatNo.6", "SeatNo.7", "SeatNo.8",
 			"SeatNo.9" };
 
-	
+	/* String ClassroomID []= {"Classroom1","Classroom2","Classroom3","Classroom4","Classroom5","Classroom6","Classroom7","Classroom8","Classroom9","Classroom10"};
+
+	int ClassroomSize [] = {30,50,40,60,70,25,15,45,35,20};
+
+	String RandomNames [] = {"Ethan","Samrat","Nishant","Saumya","Maaz","Arshi","Ansh","Manvi","Kanika","Lakshay"}; */
+
+	// THE ABOVE CODE WILL BE REMOVED WHEN CONNECTED TO BACKEND
 
 	if ("student".equals(userRole)) {
-
-		Connection con = null; // Declare the Connection variable outside the try block
-		try {
-		    Class.forName("com.mysql.jdbc.Driver");
-		    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/company?useSSL=false", "root", "root");
-		    PreparedStatement ps = con.prepareStatement("select classroom_id,seat_row,seat_column from ClassroomAllocation where student_name=?;");
-		    ps.setString(1, userName);
-		    ResultSet rss = ps.executeQuery();
-		
-		    System.out.println("fewnloifnweolfnwelofhnweliko4fhbgwrelf");
-		    while (rss.next()) {
-		        String classroomID = rss.getString("classroom_id");
-		        String rowNo = rss.getString("seat_row");
-		        String columnNo = rss.getString("seat_column");
-		        System.out.println(classroomID+rowNo+columnNo);
-		    
-
 	%>
 	<div class="overflow-x-auto">
 		<table class="table table-zebra">
@@ -184,9 +173,6 @@
 					<th></th>
 					<th>Name</th>
 					<th>Seat</th>
-					<th>Classroom</th>
-					<th>Row</th>
-					<th>Column</th>
 					<%
 					if ("BCA".equals(course)) {
 						for (int j = sem - 1; j == sem - 1; j++) {
@@ -202,9 +188,7 @@
 				<tr>
 					<th><%=i + 1%></th>
 					<td><%=BCA[j][i]%></td>
-					<td><%=classroomID%></td>
-					<td><%=rowNo%></td>
-					<td><%=columnNo%></td>
+					<td><%=seatNumber%></td>
 				</tr>
 				<%
 				}
@@ -314,104 +298,67 @@
 				}
 				}
 				}
-				
+				}
 				%>
 			</tbody>
 		</table>
 	</div>
-<%} }catch (Exception e) {
-    out.println("<p>Error: " + e.getMessage() + "</p>");
-} finally {
-    try {
-        if (con != null) {
-            con.close();
-        }
-    } catch (SQLException e) {
-        out.println("<p>Error closing database connection: " + e.getMessage() + "</p>");
-        }
-    }
-		}
 
-	else if("superuser".equals(userRole) || "admin".equals(userRole) ){
+
+	<%
+	if ("admin".equals(userRole) || "superuser".equals(userRole)) {
+		String ClassroomID[] = { "Classroom 1", "Classroom 2", "Classroom 3", "Classroom 4", "Classroom 5", "Classroom 6",
+		"Classroom 7", "Classroom 8", "Classroom 9", "Classroom 10" };
+	%>
+	<div class="container">
+	 
+		<%
+		int ClassroomSize[][] = { { 5, 6 }, { 8, 7 }, { 6, 7 }, { 6, 7 }, { 6, 7 }, { 5, 5 }, { 3, 5 }, { 9, 5 }, { 7, 5 },
+				{ 4, 5 } };
+		String RandomNames[] = { "Ethan", "Samrat", "Nishant", "Saumya", "Maaz", "Arshi", "Ansh", "Manvi", "Kanika", "Lakshay",
+				"Ethan", "Samrat", "Nishant", "Saumya", "Maaz", "Arshi", "Ansh", "Manvi", "Kanika", "Lakshay", "Ethan",
+				"Samrat", "Nishant", "Saumya", "Maaz", "Arshi", "Ansh", "Manvi", "Kanika", "Lakshay", "Ethan", "Samrat",
+				"Nishant", "Saumya", "Maaz", "Arshi", "Ansh", "Manvi", "Kanika", "Lakshay" };
+
+		for (int i = 0; i < ClassroomID.length; i++) {
 		%>
-
-	
-			<%@ page import="java.io.PrintWriter" %>
-<%@ page import="java.sql.*" %>
-
-
-<%
-Connection con = null; // Declare the Connection variable outside the try block
-try {
-    Class.forName("com.mysql.jdbc.Driver");
-    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/company?useSSL=false", "root", "root");
-    PreparedStatement ps = con.prepareStatement("select * from ClassroomAllocation");
-    ResultSet rs = ps.executeQuery();
-
-    String classid = "";
-    String[][] rowcolumnsStudents = new String[100][100]; // Initialize the array with fixed dimensions
-    String[][] rowcolumnsCourses = new String[100][100]; // Initialize the array with fixed dimensions
-    
-    int rows=0;
-    int columns=0;
-    while (rs.next()) {
-        String classroomID = rs.getString("classroom_id");
-
-        if (classid.equals("")) {
-            classid = classroomID;
-        } else if (!classid.equals(classroomID)) {
-            // Print the data for the previous classroom
-    %>
-            <div>
-                <h3 class="text-2xl font-medium text-center m-4">ClassRoom - <%=classid%></h3>
-                <div class="columns-">
-                    <table class="table">
-                        <!-- Head -->
-                        <thead>
-                            <!-- Your table head content goes here -->
-                        </thead>
-                        <tbody>
-                            <%
-                            for (int j = 1; j <= rows; j++) {
-                            %>
-                                <tr class="hover border-b hover:bg-gray-700">
-                                    <% for (int k = 1; k <= columns; k++) { %>
-                                        <td class="bg-gray-100"><%=rowcolumnsStudents[j-1][k-1]%></td>
-                                        <td class="bg-gray-100"><%=rowcolumnsCourses[j-1][k-1]%></td>
-                                    <% } %>
-                                </tr>
-                            <%
-                            }
-                            %>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-    <%
-            classid = classroomID; // Update classid for the new classroom
-            rowcolumnsStudents = new String[100][100]; // Reset the rowcolumns array for the new classroom
-            rowcolumnsCourses = new String[100][100]; // Reset the rowcolumns array for the new classroom
-        }
-
-        rows = rs.getInt("seat_row");
-        columns = rs.getInt("seat_column");
-        String stname = rs.getString("student_name");
-        String coursename = rs.getString("course_name");
-        rowcolumnsStudents[rows-1][columns-1] = stname; // Store the student name in the array
-        rowcolumnsCourses[rows-1][columns-1] = coursename; // Store the student name in the array
-    }
-} catch (Exception e) {
-    out.println("<p>Error: " + e.getMessage() + "</p>");
-} finally {
-    try {
-        if (con != null) {
-            con.close();
-        }
-    } catch (SQLException e) {
-        out.println("<p>Error closing database connection: " + e.getMessage() + "</p>");
-    }
-}}
+		<div>
+			<h3 class="text-2xl font-medium text-center m-4"><%=ClassroomID[i]%></h3>
+			<div class="columns-<%=ClassroomSize[i][1]%>">
+				<table class="table ">
+					<!-- head -->
+					<thead>
+						
+					</thead>
+					<tbody>
+						<%
+						for (int j = 1; j <= ClassroomSize[i][1]; j++) {
+							for (int k = 1; k <= ClassroomSize[i][0]; k++) {
+						%>
+						<tr class="hover border-b hover:bg-gray-700">
+							<td class="bg-gray-200"><%=RandomNames[k]%></td>
+							<td class="bg-gray-100"><%=j%>,<%=k%></td>
+						</tr>
+						<%
+						}
+						}
+						%>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<%
+}
 %>
+	</div>
+	<%
+}
+%>
+
+
+
+
+
 
 
 	<%
